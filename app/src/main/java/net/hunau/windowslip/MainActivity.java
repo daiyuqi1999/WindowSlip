@@ -37,21 +37,21 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        setTitle("滑动窗口由王豪杰设计");
+        setTitle("滑动窗口由周博设计");
 
         /* 标题 */
         title = (TextView) findViewById(R.id.title);
 
         final DBAdapter dbAdepter = new DBAdapter(this);
         dbAdepter.open();
-        for(int i = 0; i < 10; i++) {
+        /*for(int i = 0; i < 10; i++) {
             User user=new User();
             user.setName(""+i+(i+1)+(i+2));
             user.setPwd(""+i+i+i);
             user.setSexy("男");
             user.setIsused(true);
             dbAdepter.insert(user);
-        }
+        }*/
         User[] users = dbAdepter.queryAllData();
 
         for (int i = 0; i < users.length; i++) {
