@@ -44,12 +44,14 @@ public class MainActivity extends AppCompatActivity  {
 
         final DBAdapter dbAdepter = new DBAdapter(this);
         dbAdepter.open();
-        /*User user=new User();
-        user.setName("李四");
-        user.setPwd("875");
-        user.setSexy("男");
-        user.setIsused(true);
-        dbAdepter.insert(user);*/
+        for(int i = 0; i < 10; i++) {
+            User user=new User();
+            user.setName(""+i+(i+1)+(i+2));
+            user.setPwd(""+i+i+i);
+            user.setSexy("男");
+            user.setIsused(true);
+            dbAdepter.insert(user);
+        }
         User[] users = dbAdepter.queryAllData();
 
         for (int i = 0; i < users.length; i++) {
